@@ -639,16 +639,16 @@ namespace big
         // Handle Join Request (partially obfuscated now, crutches deployed)
         {
             "HJR",
-            "4C 8B F1 48 8D 4D E0 45 33 FF",
+            "48 81 EC E8 03 00 00 4C 8B F1",
             [](memory::handle ptr)
             {
-                g_pointers->m_gta.m_handle_join_request = ptr.sub(0x2D).as<PVOID>();
+                g_pointers->m_gta.m_handle_join_request = ptr.sub(0x26).as<PVOID>();
             }
         },
         // Write Join Response Data
         {
             "WJRD",
-            "E8 ? ? ? ? 90 EB C5 CC 8B 05 ? ? ? ?",
+            "E8 ? ? ? ? 84 C0 75 0A 44 89 23",
             [](memory::handle ptr)
             {
                 g_pointers->m_gta.m_write_join_response_data = ptr.add(1).rip().as<functions::write_join_response_data>();
@@ -1762,10 +1762,10 @@ namespace big
         // Session Request Patch
         {
             "SRP",
-            "41 38 9E 98 B7 00 00 0F 85 ? ? ? ?",
+            "41 38 9E 98 B7 00 00 0F 85 6A FE FF FF",
             [](memory::handle ptr)
             {
-                g_pointers->m_gta.m_session_request_patch = ptr.add(0xD).as<PVOID>();
+                g_pointers->m_gta.m_session_request_patch = ptr.add(0x14).as<PVOID>();
             }
         },
         // Get Peer By Security Id
