@@ -648,7 +648,7 @@ namespace big
         // Write Join Response Data
         {
             "WJRD",
-            "E8 ? ? ? ? 84 C0 75 0A",
+            "E8 ? ? ? ? 90 EB C5 CC 8B 05 ? ? ? ?",
             [](memory::handle ptr)
             {
                 g_pointers->m_gta.m_write_join_response_data = ptr.add(1).rip().as<functions::write_join_response_data>();
