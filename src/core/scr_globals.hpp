@@ -39,7 +39,7 @@ namespace big::scr_globals
 	static inline const script_global session(1574589);
 	static inline const script_global session2(1575042);
 	static inline const script_global session3(33776);
-	static inline const script_global session4(2686090);
+	static inline const script_global session4(1574943);
 	static inline const script_global session5(1575017);
 	static inline const script_global session6(2696922); // freemode -> if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 
